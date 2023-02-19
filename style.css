@@ -22,3 +22,9 @@
   --DarkGreen: #3f5946;
   --Tan: #f2f2ed;
 }
+
+.container {
+    display: flex;
+    flex-direction: column;
+    
+}
