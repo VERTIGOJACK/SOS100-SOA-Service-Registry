@@ -15,16 +15,71 @@
 }
 
 :root {
-  --White: #f2f2ed;
+  --White: white;
   --Gray: #333;
   --LightGreen: #72bd5d;
+  --LightGreenAlt: #609c50;
   --Font: "Open Sans", sans-serif;
   --DarkGreen: #3f5946;
   --Tan: #f2f2ed;
 }
 
-.container {
-    display: flex;
-    flex-direction: column;
-    
+/* general rules */
+body {
+  display: flex;
+  background-color: var(--LightGreen);
+  justify-content: center;
+  justify-items: center;
+}
+
+h1 {
+  color: var(--DarkGreen);
+}
+
+p {
+  font-size: 12pt;
+}
+
+table {
+  margin: 5vmin;
+  border-collapse: collapse;
+}
+
+table,
+td {
+  border-style: solid;
+  border-color: rgba(222, 222, 222, 0.5);
+}
+
+table * {
+  font-size: 8pt;
+}
+
+th {
+  font-size: 10pt;
+  padding: 2vmin;
+  background-color: var(--LightGreen);
+}
+
+td {
+  text-align: center;
+  background-color: var(--White);
+}
+
+tr:nth-of-type(2n) td {
+  background-color: var(--Tan);
+}
+
+/* class rules */
+
+.main-container {
+  background-color: var(--White);
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+}
+
+#pageindex {
+  display: flex;
+  justify-content: center;
 }
