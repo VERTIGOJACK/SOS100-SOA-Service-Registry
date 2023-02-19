@@ -36,10 +36,12 @@ h1 {
   color: var(--DarkGreen);
 }
 
-p {
+p,
+a {
   font-size: 12pt;
 }
 
+/* tables */
 table {
   margin: 5vmin;
   border-collapse: collapse;
