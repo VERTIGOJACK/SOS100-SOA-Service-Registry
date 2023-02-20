@@ -1,16 +1,21 @@
-const url =
-  "https://docs.google.com/spreadsheets/d/1IzOsbAKwTb3imgaLeHYfz9t6NZkLR0ytJ-of217xGBg/gviz/tq?tqx=out:json&tq&gid=551431299";
-const googleprefix = "/*O_o*/google.visualization.Query.setResponse(";
-const googlesuffix = ");";
+const url = "https://informatik3.ei.hv.se/FriskMonitoringAPI/api/services";
+
+const fakejsonstring =
+  '[{"id":3,"consumerGroupIds":"1,2,3","ownerGroupId":1,"title":"Användarinfo","description":"Hanterar information om våra användare, sådant som syns publikt för andra.","type":"API","url":"https://informatik1.ei.hv.se/Profil/api/userinfos","swaggerURL":"https://informatik1.ei.hv.se/Profil/swagger"},{"id":4,"consumerGroupIds":"1,2,3","ownerGroupId":5,"title":"Kontotjänst","description":"Hanterar och lagrar användares konton.","type":"API","url":"https://informatik5.ei.hv.se/FriskAPI/Users","swaggerURL":"https://informatik5.ei.hv.se/FriskAPI/swagger/"},{"id":5,"consumerGroupIds":"1,2,3","ownerGroupId":2,"title":"Eventhantering","description":"Hanterar skapandet av event och lagrar information.","type":"API","url":"https://informatik2.ei.hv.se/eventmanagement/api/events","swaggerURL":"https://informatik2.ei.hv.se/eventmanagement/swagger"}]';
+
+const fakejson = JSON.parse(fakejsonstring);
+
+const test = true;
 
 export async function ServiceImportJson() {
-  const data = await fetch(url);
-  const text = await data.text();
-  console.log(text);
-  let preparedtext = text.substring(googleprefix.length + 1);
-  console.log(preparedtext);
-  preparedtext = preparedtext.split(googlesuffix)[0];
-  console.log(preparedtext);
-  const json = JSON.parse(preparedtext);
-  return json;
+  if (test != true) {
+    const data = await fetch(url);
+    const json = await data.json();
+    console.log(json);
+    return json;
+  } else {
+    const json = fakejson;
+    console.log(json);
+    return json;
+  }
 }
