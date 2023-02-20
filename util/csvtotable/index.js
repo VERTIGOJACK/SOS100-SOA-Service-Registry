@@ -1,5 +1,3 @@
-import * as csv from "../../csv-main/index.js";
-
 export const CsvToTableAsync = async (filePath, columns) => {
   const file = await fetch(filePath);
   const data = await file.text();

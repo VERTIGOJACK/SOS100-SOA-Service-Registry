@@ -1,4 +1,0 @@
-﻿Service;Ansvarig Grupp;Typ;Länk;Swagger;Beskrivning
-Användarinfo;1;API;http://informatik1.ei.hv.se/Profil/api/userinfos;http://informatik1.ei.hv.se/Profil/swagger;Hanterar information om våra användare%2c sådant som syns publikt för andra.
-Kontotjänst;5;API;https://informatik5.ei.hv.se/FriskAPI/Users;http://informatik5.ei.hv.se/FriskAPI/swagger/;Hanterar och lagrar användares konton.
-Eventhantering;2;API;https://informatik2.ei.hv.se/eventmanagement/api/events;https://informatik2.ei.hv.se/eventmanagement/swagger;Hanterar skapandet av event och lagrar information.
