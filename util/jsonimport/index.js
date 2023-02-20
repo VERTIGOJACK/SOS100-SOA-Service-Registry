@@ -6,11 +6,16 @@ const googlesuffix = ");";
 export async function ServiceImportJson() {
   const data = await fetch(url);
   const text = await data.text();
-  console.log(text);
   let preparedtext = text.substring(googleprefix.length + 1);
-  console.log(preparedtext);
   preparedtext = preparedtext.split(googlesuffix)[0];
-  console.log(preparedtext);
   const json = JSON.parse(preparedtext);
+  console.log(json);
   return json;
+}
+
+export async function GetColumns(json) {
+  return json.table.cols;
+}
+export async function GetRows(json) {
+  return json.table.rows;
 }
