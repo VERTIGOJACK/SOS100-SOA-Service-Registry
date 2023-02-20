@@ -5,13 +5,12 @@ const fakejsonstring =
 
 const fakejson = JSON.parse(fakejsonstring);
 
-const test = true;
+const test = false;
 
 export async function ServiceImportJson() {
   if (test != true) {
     const data = await fetch(url);
     const json = await data.json();
-    console.log(json);
     return json;
   } else {
     const json = fakejson;

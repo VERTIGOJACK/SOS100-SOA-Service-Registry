@@ -81,7 +81,7 @@ tr:nth-of-type(2n) td {
   flex-direction: column;
 }
 
-#pageindex {
+#index-container {
   display: flex;
   justify-content: center;
 }
