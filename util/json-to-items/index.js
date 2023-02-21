@@ -29,11 +29,15 @@ export const JsonToItems = (json) => {
     section.setAttribute("id", "service" + i);
     section.setAttribute("class", "service");
 
+    let titleSection = document.createElement("section");
+    titleSection.setAttribute("class", "title-section");
     //append title
-    section.appendChild(CreateElement("h1", row.title + " - " + row.type));
+    titleSection.appendChild(CreateElement("h1", row.title + " - " + row.type));
 
     //create owners and consumers
-    section.appendChild(OwnersConsumers(row));
+    titleSection.appendChild(OwnersConsumers(row));
+
+    section.appendChild(titleSection)
 
     //create description
     section.appendChild(CreateElement("p", row.description));
@@ -43,10 +47,10 @@ export const JsonToItems = (json) => {
     linksSection.setAttribute("class", "link-section");
 
     linksSection.appendChild(
-      CreateLink("Länk till tjänstens GET", row.url, row.url)
+      CreateLink("Länk till tjänstens GET", "Service URL", row.url)
     );
     linksSection.appendChild(
-      CreateLink("Länk till Swagger", row.swaggerURL, row.swaggerURL)
+      CreateLink("Länk till Swagger", "Swagger URL", row.swaggerURL)
     );
 
     section.appendChild(linksSection);
