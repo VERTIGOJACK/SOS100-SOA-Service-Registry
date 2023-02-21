@@ -22,7 +22,7 @@
   --Font: "Open Sans", sans-serif;
   --DarkGreen: #3f5946;
   --Tan: #f2f2ed;
-  --TanAlt: #d2dacd;
+  --TanAlt: #e5e5e5;
 }
 
 /* general rules */
@@ -39,15 +39,15 @@ h1 {
 
 p,
 a {
-  font-size: 12pt;
+  font-size: 2vmin;
 }
 
 /* tables */
 table {
   margin: 5vmin;
   border-collapse: collapse;
-  width: 80%;
-  filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2));
+  width: 70%;
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
 }
 
 table,
@@ -58,11 +58,13 @@ td {
 
 table * {
   font-size: 2vmin;
+  font-weight: 100;
 }
 
 th {
   font-size: 3vmin;
-  padding: 2vmin;
+  color: var(--White);
+  padding: 1vmin;
   background-color: var(--LightGreen);
 }
 
@@ -94,7 +96,7 @@ tr:nth-of-type(2n) td {
 .head h1 {
   font-size: 5vmin;
   width: 100%;
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
   margin: 0px;
   display: flex;
   align-items: center;
@@ -125,8 +127,10 @@ a {
   margin: 0%;
 }
 
-.service p {
+.service > p {
   font-size: 2vmin;
+  max-width: 60%;
+  
 }
 
 .service a {
@@ -145,7 +149,7 @@ a {
 }
 
 .title-section {
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 0px 2px rgba(0, 0, 0, 0.3));
   margin: 0px;
   display: flex;
   align-items: center;
@@ -153,10 +157,13 @@ a {
   background-color: var(--Tan);
 }
 
+.title-section h1 {
+  font-size: 3vmin;
+}
+
 /* owners consumers */
 .owner-consumers {
   display: flex;
-
   flex-direction: row;
 }
 
@@ -164,15 +171,24 @@ a {
   font-size: 2vmin;
 }
 
+.owner-consumers p {
+  font-size: 2vmin;
+}
+
 .owner,
 .consumer {
   margin: 1vmin;
   padding: 1vmin;
-  width: fit-content;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 2vmin;
+}
+
+.owner p,
+.consumer p {
+  margin: 0vmin;
+  padding: 0vmin;
 }
 
 .owner {
