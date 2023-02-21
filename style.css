@@ -22,12 +22,13 @@
   --Font: "Open Sans", sans-serif;
   --DarkGreen: #3f5946;
   --Tan: #f2f2ed;
+  --TanAlt: #d2dacd;
 }
 
 /* general rules */
 body {
   display: flex;
-  background-color: var(--LightGreen);
+  background-color: var(--TanAlt);
   justify-content: center;
   justify-items: center;
 }
@@ -46,7 +47,7 @@ table {
   margin: 5vmin;
   border-collapse: collapse;
   width: 80%;
-  filter: drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.3));
+  filter: drop-shadow(0px 5px 15px rgba(0, 0, 0, 0.2));
 }
 
 table,
