@@ -9,11 +9,16 @@
 // type: "API";
 // url: "https://informatik1.ei.hv.se/Profil/api/userinfos";
 
-export const tableHeaders = ["Service", "Ägare", "Konsumenter", "Typ", "Länk", "Swagger"];
+export const tableHeaders = [
+  "Service",
+  "Typ",
+  "Ägare",
+  "Konsumenter",
+  "Länk",
+  "Swagger",
+];
 
 export const JsonToTable = (json) => {
-  
-
   //create table and header row
   const table = document.createElement("table");
   const headerRow = document.createElement("tr");
@@ -33,13 +38,12 @@ export const JsonToTable = (json) => {
   for (let i = 0; i < json.length; i++) {
     let row = document.createElement("tr");
 
-    row.appendChild(TableDescriptionLink(json[i].title,i));
+    row.appendChild(TableDescriptionLink(json[i].title, i));
+    row.appendChild(TableData(json[i].type));
     row.appendChild(TableData(json[i].ownerGroupId));
     row.appendChild(TableData(json[i].consumerGroupIds));
-    row.appendChild(TableData(json[i].type));
     row.appendChild(TableDataLink(json[i].url));
     row.appendChild(TableDataLink(json[i].swaggerURL));
-
     table.appendChild(row);
   }
   //return table
