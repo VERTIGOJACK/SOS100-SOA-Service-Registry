@@ -116,15 +116,12 @@ tr:nth-of-type(2n) td {
 }
 
 /* tjänst tabell */
-#index-container {
-  display: flex;
-  justify-content: center;
-}
-
+#index-container,
 .groups-container {
   display: flex;
   justify-content: center;
 }
+
 /* monitoringtjänst */
 .status-container {
   display: flex;
