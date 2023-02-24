@@ -1,5 +1,7 @@
 //format of json:
 
+import { workgroupsList } from "../data/data.js";
+
 // consumerGroupIds: "1,2,3";
 // description: "Hanterar information om våra användare, sådant som syns publikt för andra.";
 // id: 3;
@@ -8,15 +10,6 @@
 // title: "Användarinfo";
 // type: "API";
 // url: "https://informatik1.ei.hv.se/Profil/api/userinfos";
-
-export const itemsHeaders = [
-  "Service",
-  "Ägare",
-  "Konsumenter",
-  "Typ",
-  "Länk",
-  "Swagger",
-];
 
 export const JsonToItems = (json) => {
   const items = document.createElement("section");
@@ -37,7 +30,7 @@ export const JsonToItems = (json) => {
     //create owners and consumers
     titleSection.appendChild(OwnersConsumers(row));
 
-    section.appendChild(titleSection)
+    section.appendChild(titleSection);
 
     //create description
     section.appendChild(CreateElement("p", row.description));
@@ -83,6 +76,10 @@ function OwnersConsumers(row) {
   //append to container
   ownerConsumers.appendChild(owner);
 
+  //make and append tooltip
+  let tooltip = GetMembersToolTip(row.ownerGroupId);
+  ownerConsumers.appendChild(tooltip);
+
   //split consumers by comma
   let consumerArray = row.consumerGroupIds.split(",");
 
@@ -96,6 +93,10 @@ function OwnersConsumers(row) {
     consumer.appendChild(CreateElement("p", element));
     //append to container
     ownerConsumers.appendChild(consumer);
+
+    //make and append tooltip
+    tooltip = GetMembersToolTip(element);
+    ownerConsumers.appendChild(tooltip);
   });
   return ownerConsumers;
 }
@@ -112,4 +113,19 @@ function CreateLink(title, clickText, url) {
   section.appendChild(element);
 
   return section;
+}
+
+function GetMembersToolTip(id) {
+  let membersInfo;
+  //get approproate list of members
+  for (let i = 0; i < workgroupsList.length; i++) {
+    if (workgroupsList[i].Gruppnummer == "Grupp " + id)
+      membersInfo = workgroupsList[i].Medlemmar;
+  }
+
+  //make new span
+  let tooltip = document.createElement("span");
+  tooltip.appendChild(CreateElement("p", membersInfo));
+  //append to container
+  return tooltip;
 }

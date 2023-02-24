@@ -86,7 +86,7 @@ tr:nth-of-type(2n) td {
 .main-container {
   background-color: var(--White);
   width: 90%;
-  max-width: 700px;
+  max-width: 1100px;
   display: flex;
   flex-direction: column;
 }
@@ -221,12 +221,32 @@ a {
 
 .owner,
 .consumer {
+  position: relative;
   margin: 1vmin;
   padding: 1vmin;
   display: flex;
   align-items: center;
   flex-direction: column;
   border-radius: 2vmin;
+}
+
+.owner + span,
+.consumer + span {
+  position: absolute;
+  bottom: 10vmin;
+  visibility: hidden;
+  background-color: rgba(51, 51, 51, 0.9);
+  color: var(--White);
+  border-radius: 1vmin;
+  transition: all 0.3s;
+  opacity: 0;
+}
+
+.owner:hover + span,
+.consumer:hover + span {
+  position: absolute;
+  visibility: visible;
+  opacity: 1;
 }
 
 .owner p,
