@@ -15,13 +15,13 @@ export const workgroupsList = [
     Gruppnummer: "Grupp 3",
     Medlemmar:
       "Fredrik Jonsson, Mike Majd Al Malla, Peter Ramstedt, Anton Karlgren, Kenny Gustavsson",
-    Ansvar: "Söktjänst, Meddelandetjänst",
+    Ansvar: "Söktjänst, Meddelandetjänst, Monitoringtjänst",
   },
   {
     Gruppnummer: "Grupp 4",
     Medlemmar:
       "Sebastian Nilsson, Marco Teran Gutmanowitz, Hannah Torsteinsrud, Julia Westlund, Dominiq Salo, Rézan Wanli",
-    Ansvar: "Eventinfo, Erbjudandetjänst",
+    Ansvar: "Eventinfo, Erbjudandetjänst, Serviceregister",
   },
   {
     Gruppnummer: "Grupp 5",

@@ -117,15 +117,23 @@ function CreateLink(title, clickText, url) {
 
 function GetMembersToolTip(id) {
   let membersInfo;
+  let responsibilityInfo;
+
   //get approproate list of members
   for (let i = 0; i < workgroupsList.length; i++) {
-    if (workgroupsList[i].Gruppnummer == "Grupp " + id)
+    if (workgroupsList[i].Gruppnummer == "Grupp " + id) {
       membersInfo = workgroupsList[i].Medlemmar;
+      responsibilityInfo = workgroupsList[i].Ansvar;
+    }
   }
 
   //make new span
   let tooltip = document.createElement("span");
+  tooltip.appendChild(CreateElement("h1", "Medlemmar"));
   tooltip.appendChild(CreateElement("p", membersInfo));
+  tooltip.appendChild(CreateElement("h1", "Ansvar"));
+  tooltip.appendChild(CreateElement("p", responsibilityInfo));
+
   //append to container
   return tooltip;
 }

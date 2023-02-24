@@ -242,6 +242,13 @@ a {
   opacity: 0;
 }
 
+.owner + span h1,
+.consumer + span h1 {
+font-size: 3vmin;
+color: var(--White);
+margin-left: 1vmin;
+}
+
 .owner:hover + span,
 .consumer:hover + span {
   position: absolute;
