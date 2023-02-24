@@ -3,7 +3,7 @@ export const workgroupsList = [
     Gruppnummer: "Grupp 1",
     Medlemmar:
       "Ahmad Kahlil, Mehmet Koyuncu, Mohammed Mneimne, Przemyslaw Walkowski",
-    Ansvar: "Användarinformation",
+    Ansvar: "Github, Användarinformation",
   },
   {
     Gruppnummer: "Grupp 2",
