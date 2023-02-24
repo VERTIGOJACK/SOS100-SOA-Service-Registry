@@ -120,6 +120,11 @@ tr:nth-of-type(2n) td {
   display: flex;
   justify-content: center;
 }
+
+.groups-container {
+  display: flex;
+  justify-content: center;
+}
 /* monitoringtjänst */
 .status-container {
   display: flex;
