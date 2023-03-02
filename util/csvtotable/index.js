@@ -83,7 +83,9 @@ function TableDataLink(input) {
   let data = document.createElement("td");
   let anchor = document.createElement("a");
   anchor.setAttribute("href", input);
+  anchor.setAttribute("target", "_blank");
   let item = document.createTextNode("Länk");
+
   anchor.appendChild(item);
   data.appendChild(anchor);
   return data;

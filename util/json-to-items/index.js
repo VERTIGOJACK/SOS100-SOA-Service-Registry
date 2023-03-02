@@ -110,6 +110,7 @@ function CreateLink(title, clickText, url) {
 
   element = CreateElement("a", clickText);
   element.setAttribute("href", url);
+  element.setAttribute("target", "_blank");
   section.appendChild(element);
 
   return section;
