@@ -13,10 +13,15 @@ const parser = new DOMParser();
 let response = await fetch("./util/loading-spinner-4/dist/index.html");
 let text = await response.text();
 
+//put spinner in divs
 loadingCircles.forEach((element) => {
   const spinner = parser
     .parseFromString(text, "text/html")
     .querySelector(".spinner-container");
+  const link = document.createElement("link");
+  link.setAttribute("rel", "stylesheet");
+  link.setAttribute("href", "./util/loading-spinner-4/dist/style.css");
+  spinner.appendChild(link);
   element.appendChild(spinner);
 });
 
