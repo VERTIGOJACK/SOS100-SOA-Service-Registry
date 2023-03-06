@@ -27,10 +27,14 @@ export const JsonToItems = (json) => {
     //append title
     titleSection.appendChild(CreateElement("h1", row.title + " - " + row.type));
 
-    //create owners and consumers
-    titleSection.appendChild(OwnersConsumers(row));
-
     section.appendChild(titleSection);
+
+    let dependencySection = document.createElement("section");
+    dependencySection.setAttribute("class", "dependency-section");
+    //create owners and consumers
+    dependencySection.appendChild(OwnersConsumers(row));
+
+    section.appendChild(dependencySection);
 
     //create description
     section.appendChild(CreateElement("p", row.description));
